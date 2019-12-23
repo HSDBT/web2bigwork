@@ -6,6 +6,7 @@
     width: 200px;
     margin: -20px 500px;
 }
+
 #mark {
     line-height: 1.5em;
     height: 100px;
@@ -69,7 +70,7 @@
     overflow:hidden;
     position: absolute;
     top:4px;
-    right:0px;
+    right:-270px;
 }
 .box{
     width:800px;
@@ -98,8 +99,10 @@
     right: 30px; 
     bottom: 30px; 
     position: fixed; 
-    color: red;
     cursor: pointer;
+}
+#to_top{
+    color: red;
 }
 .btn1{
     margin-top: 10px;
