@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<link type="text/css" rel="styleSheet"  href="1.css" />
+</head>
+<body>		
+	<div id="big">
+		<div id="tes">
+			TEST
+		</div>
+		<div id="top">
+			<div class="allimg">
+				<img src="images/s1.jpg" >
+			</div>
+			<div class="allimg">
+				<img src="images/s2.jpg" >
+			</div>
+			<div class="allimg">
+				<img src="images/s3.jpg" >
+			</div>
+			<div class="allimg">
+				<img src="images/s4.jpg" >
+			</div>
+			<div class="allimg">
+				<img src="images/s5.jpg" >
+			</div>
+		</div>
+		<ul id="box">
+			<a href="xuanhuan\1.html" class="clj"><li>玄幻</li></a>
+			<a href="xianxia\bigwork.html" class="clj"><li>仙侠</li></a>
+			<a href="lishi\main.html" class="clj"><li>历史</li></a>
+			<a href="zhaidou\class.html" class="clj"><li>宅斗</li></a>
+			<a href="kehuan\bighomework.html" class="clj"><li>科幻</li></a>
+		</ul>
+	</div>
+</body>
+<script src="js/animate.js"></script>
+<script type="text/javascript">
+	var ismoving = false;
+	var imglist = document.getElementsByClassName("allimg");
+	var box = document.getElementById("box");
+	var cljlist=document.getElementsByClassName("clj");
+	var t1,t2,t3,t4,t5,t6,t7,t8;
+	var intervalId1,intervalId2,intervalId3,intervalId4,intervalId5,intervalId6,intervalId7;
+	var test = document.getElementById("tes")
+	cljlist[0].onmouseover=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);
+		var objStyle1 = getComputedStyle(imglist[0]);//获取元素的标签属性值
+		imglist[0].style.width = objStyle1["width"];
+		imglist[0].style.height = objStyle1["height"];
+		imglist[0].style.left = objStyle1["left"];
+		imglist[0].style.top = objStyle1["top"];
+		for(var j=0;j<5;j++){				
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>0.3){
+				cljlist[j].style.opacity= 0.3;	
+			}
+		}	
+		imglist[0].style.display="block";
+	    intervalId1 = setInterval(function(){
+		if(parseFloat(imglist[0].style.width)>=300){
+			clearInterval(intervalId1);
+			return;
+		}
+		imglist[0].style.width= (parseFloat(imglist[0].style.width)+5)+"px";
+		imglist[0].style.height= (parseFloat(imglist[0].style.height)+10)+"px";
+		imglist[0].style.left= (parseFloat(imglist[0].style.left)-2.5)+"px";
+		imglist[0].style.top= (parseFloat(imglist[0].style.top)-5)+"px";
+		},30)	
+		cljlist[0].style.opacity=0.5;
+		t1 = setInterval(function(){					
+			if(parseFloat(cljlist[0].style.opacity)>=1){
+				clearInterval(t1);
+				return;
+			}
+			cljlist[0].style.opacity = parseFloat(cljlist[0].style.opacity)+0.2;
+		},100);
+	}
+	cljlist[1].onmouseover=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);
+		var objStyle1 = getComputedStyle(imglist[1]);//获取元素的标签属性值
+		imglist[1].style.width = objStyle1["width"];
+		imglist[1].style.height = objStyle1["height"];
+		imglist[1].style.left = objStyle1["left"];
+		imglist[1].style.top = objStyle1["top"];
+		for(var j=0;j<5;j++){				
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>0.3){
+				cljlist[j].style.opacity= 0.3;	
+			}
+		}	
+	    intervalId2 = setInterval(function(){
+		if(parseFloat(imglist[1].style.width)>=300){
+			clearInterval(intervalId2);
+			return;
+		}
+		imglist[1].style.display="block";
+		imglist[1].style.width= (parseFloat(imglist[1].style.width)+5)+"px";
+		imglist[1].style.height= (parseFloat(imglist[1].style.height)+10)+"px";
+		imglist[1].style.left= (parseFloat(imglist[1].style.left)-2.5)+"px";
+		imglist[1].style.top= (parseFloat(imglist[1].style.top)-5)+"px";
+		},30)				
+		cljlist[1].style.opacity=0.5;
+		t2 = setInterval(function(){				
+			if(parseFloat(cljlist[1].style.opacity)>=1){
+				clearInterval(t2);
+				return;
+			}
+			cljlist[1].style.opacity = parseFloat(cljlist[1].style.opacity)+0.2;
+		},100);
+	}
+	cljlist[2].onmouseover=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);
+		var objStyle1 = getComputedStyle(imglist[2]);//获取元素的标签属性值
+		imglist[2].style.width = objStyle1["width"];
+		imglist[2].style.height = objStyle1["height"];
+		imglist[2].style.left = objStyle1["left"];
+		imglist[2].style.top = objStyle1["top"];
+		for(var j=0;j<5;j++){				
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>0.3){
+				cljlist[j].style.opacity= 0.3;	
+			}
+		}	
+		imglist[2].style.display="block";
+	    intervalId3 = setInterval(function(){
+		if(parseFloat(imglist[2].style.width)>=300){
+			clearInterval(intervalId3);
+			return;
+		}
+		imglist[2].style.width= (parseFloat(imglist[2].style.width)+5)+"px";
+		imglist[2].style.height= (parseFloat(imglist[2].style.height)+10)+"px";
+		imglist[2].style.left= (parseFloat(imglist[2].style.left)-2.5)+"px";
+		imglist[2].style.top= (parseFloat(imglist[2].style.top)-5)+"px";
+		},30)			
+		cljlist[2].style.opacity=0.5;
+		t3 = setInterval(function(){				
+			if(parseFloat(cljlist[2].style.opacity)>=1){
+				clearInterval(t3);
+				return;
+			}
+			cljlist[2].style.opacity = parseFloat(cljlist[2].style.opacity)+0.2;
+		},100);
+	}
+	cljlist[3].onmouseover=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);
+		var objStyle1 = getComputedStyle(imglist[3]);//获取元素的标签属性值
+		imglist[3].style.width = objStyle1["width"];
+		imglist[3].style.height = objStyle1["height"];
+		imglist[3].style.left = objStyle1["left"];
+		imglist[3].style.top = objStyle1["top"];
+		for(var j=0;j<5;j++){				
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>0.3){
+				cljlist[j].style.opacity= 0.3;	
+			}
+		}	
+		imglist[3].style.display="block";
+	    intervalId4 = setInterval(function(){
+		if(parseFloat(imglist[3].style.width)>=300){
+			clearInterval(intervalId4);
+			return;
+		}
+		imglist[3].style.width= (parseFloat(imglist[3].style.width)+5)+"px";
+		imglist[3].style.height= (parseFloat(imglist[3].style.height)+10)+"px";
+		imglist[3].style.left= (parseFloat(imglist[3].style.left)-2.5)+"px";
+		imglist[3].style.top= (parseFloat(imglist[3].style.top)-5)+"px";
+		},30)		
+		cljlist[3].style.opacity=0.5;
+		t4 = setInterval(function(){		
+			if(parseFloat(cljlist[3].style.opacity)>=1){
+				clearInterval(t4);
+				return;
+			}
+			cljlist[3].style.opacity = parseFloat(cljlist[3].style.opacity)+0.2;
+		},100);
+	}
+	cljlist[4].onmouseover=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);	
+		var objStyle1 = getComputedStyle(imglist[4]);//获取元素的标签属性值
+		imglist[4].style.width = objStyle1["width"];
+		imglist[4].style.height = objStyle1["height"];
+		imglist[4].style.left = objStyle1["left"];
+		imglist[4].style.top = objStyle1["top"];
+		for(var j=0;j<5;j++){				
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>0.3){
+				cljlist[j].style.opacity= 0.3;	
+			}
+		}	
+		imglist[4].style.display="block";
+	    intervalId5 = setInterval(function(){
+		if(parseFloat(imglist[4].style.width)>=300){
+			clearInterval(intervalId5);
+			return;
+		}
+		imglist[4].style.width= (parseFloat(imglist[4].style.width)+5)+"px";
+		imglist[4].style.height= (parseFloat(imglist[4].style.height)+10)+"px";
+		imglist[4].style.left= (parseFloat(imglist[4].style.left)-2.5)+"px";
+		imglist[4].style.top= (parseFloat(imglist[4].style.top)-5)+"px";
+		},30)	
+		cljlist[4].style.opacity=0.5;
+		t5 = setInterval(function(){				
+			if(parseFloat(cljlist[4].style.opacity)>=1){
+				clearInterval(t5);
+				return;
+			}
+			cljlist[4].style.opacity = parseFloat(cljlist[4].style.opacity)+0.2;
+		},100);
+	}
+	box.onmouseout=function(){
+		clearInterval(t1);
+		clearInterval(t2);
+		clearInterval(t3);
+		clearInterval(t4);
+		clearInterval(t5);
+		clearInterval(t6);
+		clearInterval(intervalId1);
+		clearInterval(intervalId2);
+		clearInterval(intervalId3);
+		clearInterval(intervalId4);
+		clearInterval(intervalId5);	
+		t6 = setInterval(function(){	
+		for(var j=0;j<5;j++){
+			var objStyle1 = getComputedStyle(cljlist[j]);//获取元素的标签属性值
+			cljlist[j].style.opacity = objStyle1["opacity"];			
+			imglist[j].style.display="none";
+			imglist[j].style.left= 250+"px";
+			imglist[j].style.top= 0+"px";
+			imglist[j].style.width= 100+"px";
+			imglist[j].style.height=100+"px";
+			if(parseFloat(cljlist[j].style.opacity)>=2){
+				clearInterval(t6);
+				return;
+			}
+			console.log(parseFloat(cljlist[j].style.opacity));
+			cljlist[j].style.opacity = parseFloat(cljlist[j].style.opacity)+0.2;
+		}
+		},100);
+	}	
+	test.onclick = function(){
+          var a0 = prompt("您多久阅读一次小说?\rA.基本不阅读\rB.偶尔阅读\rC.经常阅读\rD.花很久时间");    
+          if(a0=='A' || a0=='B'){
+        	  var a1 = prompt("到现在为止你共阅读过多少本小说？\rA.2本以下\rB.3-4本\rC.5-6本\rD.7本以上");
+            var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+            var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+            if(a1=='A'){
+              alert("您对小说的阅读属于未入门等级。");
+            }
+            else if(a1=='B' || a1=='C'){
+              var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+              var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+              alert("您对小说的阅读属于刚刚入门等级。");
+            }
+            else if(a1=='D'){
+              var a2 = prompt("您愿意牺牲睡觉的时间来看小说吗？\rA.不可能，睡觉更重要\rB.可能会选择小说\rC.我要看小说");
+              if(a2=='A'){
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+                alert("您对小说的阅读属于刚刚入门等级。");
+              }
+              else if(a2=='B' || a2=="C"){
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+                alert("您是初级阅读者。");
+              }
+            }
+          }   
+          else if(a0=='C' || a0=='D'){
+            var a3 = prompt("您会和身边的朋友讨论小说吗？\rA.会\rB.偶尔会\rC.从不会");
+            var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+            var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+            if(a3=='C'){
+              alert('您是中级阅读者');
+            }
+            else if(a3=='A' || a3=='B'){
+              var a4 = prompt("您了解几种小说类型?\rA.5种以下\rB.5-7种\rC.7-9种\rD.10种以上");
+              if(a3=='A'){
+                alert('您是中级阅读者');  
+              }
+              else if(a3=='B' || a3=='C'){
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+                alert('您是小说热爱者');
+              }
+              else if(a3=='D'){
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.仙侠\rB.科幻\rC.宫斗\rD.言情");
+                var b = prompt("您更喜欢下列哪一种小说类型?\rA.穿越\rB.历史\rC.重生\rD.都市");
+                alert('您是狂热追求者');
+              }
+            }
+          }
+   		}
+</script>
+</html>
