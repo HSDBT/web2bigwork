@@ -152,22 +152,28 @@
 	var xulist = document.getElementById("xu").children;
 	var ul1list = document.getElementsByClassName("ul1")[0].children;
 	var ul2list = document.getElementsByClassName("ul1")[1].children;
-	// var ul3list = document.getElementsByClassName("ul1")[2].children;
 	var allduanlist = document.getElementsByClassName("allduan")[0].children;
 	var allduan1list = document.getElementsByClassName("allduan")[1].children;
-	// var allduan2list = document.getElementsByClassName("allduan")[2].children;
+	var ismoving = false;
 	//轮播图
 	function xt(){
+		if(ismoving==true){
+			return;
+		}
+		ismoving = true;
 		i++;
 		chan(); ///错误
 		if(i==6){
 			animate(igbx,{left:-840*i},function(){
 				igbx.style.left ="-840px";
 				i=1;
-			});				
+				ismoving=false;
+			});		
 		}
 		else{
-			animate(igbx,{left:(-840)*i});
+			animate(igbx,{left:(-840)*i},function(){
+				ismoving=false;				
+			});
 		}
 	}
 	var t = setInterval(xt,3000);
@@ -182,7 +188,9 @@
 		xulist[j].onmouseover=function(){
 			i=this.ix+1;
 			chan();
-			animate(igbx,{left:-840*i});
+			animate(igbx,{left:(-840)*i},function(){
+				ismoving=false;				
+			});
 		}
 	}
 	function chan(){
@@ -216,7 +224,7 @@
 		bookimg[0].style.marginLeft = objStyle1["marginLeft"];
 		bookimg[0].style.marginTop = objStyle1["marginTop"];
 		    intervalId1 = setInterval(function(){
-			if(parseInt(bookimg[0].style.width)>=300){
+			if(parseFloat(bookimg[0].style.width)>=300){
 				clearInterval(intervalId1);
 				return;
 			}
@@ -234,7 +242,7 @@
 		bookimg[0].style.marginLeft = objStyle1["marginLeft"];
 		bookimg[0].style.marginTop = objStyle1["marginTop"];
 		    intervalId2 = setInterval(function(){
-			if(parseInt(bookimg[0].style.width)<=200){
+			if(parseFloat(bookimg[0].style.width)<=200){
 				clearInterval(intervalId2);
 				return;
 			}
@@ -252,7 +260,7 @@
 		bookimg[1].style.marginLeft = objStyle1["marginLeft"];
 		bookimg[1].style.marginTop = objStyle1["marginTop"];
 		    intervalId3 = setInterval(function(){
-			if(parseInt(bookimg[1].style.width)>=300){
+			if(parseFloat(bookimg[1].style.width)>=300){
 				clearInterval(intervalId3);
 				return;
 			}
@@ -270,7 +278,7 @@
 		bookimg[1].style.marginLeft = objStyle1["marginLeft"];
 		bookimg[1].style.marginTop = objStyle1["marginTop"];
 		    intervalId4 = setInterval(function(){
-			if(parseInt(bookimg[1].style.width)<=200){
+			if(parseFloat(bookimg[1].style.width)<=200){
 				clearInterval(intervalId4);
 				return;
 			}
@@ -280,42 +288,6 @@
 			bookimg[1].style.marginTop= (parseFloat(bookimg[1].style.marginTop)+5)+"px";
 		},30)
 	}
-	// img1List[2].onmouseover=function(){
-	// 	clearInterval(intervalId6);
-	// 	var objStyle1 = getComputedStyle(bookimg[2]);//获取元素的标签属性值
-	// 	bookimg[2].style.width = objStyle1["width"];
-	// 	bookimg[2].style.height = objStyle1["height"];
-	// 	bookimg[2].style.marginLeft = objStyle1["marginLeft"];
-	// 	bookimg[2].style.marginTop = objStyle1["marginTop"];
-	// 	    intervalId5 = setInterval(function(){
-	// 		if(parseInt(bookimg[2].style.width)>=200){
-	// 			clearInterval(intervalId5);
-	// 			return;
-	// 		}
-	// 		bookimg[2].style.width= (parseFloat(bookimg[2].style.width)+5)+"px";
-	// 		bookimg[2].style.height= (parseFloat(bookimg[2].style.height)+5)+"px";
-	// 		bookimg[2].style.marginLeft= (parseFloat(bookimg[2].style.marginLeft)-2.5)+"px";
-	// 		bookimg[2].style.marginTop= (parseFloat(bookimg[2].style.marginTop)-2.5)+"px";
-	// 	},30)
-	// }
-	// img1List[2].onmouseout=function(){
-	// 	clearInterval(intervalId5);
-	// 	var objStyle1 = getComputedStyle(bookimg[2]);//获取元素的标签属性值
-	// 	bookimg[2].style.width = objStyle1["width"];
-	// 	bookimg[2].style.height = objStyle1["height"];
-	// 	bookimg[2].style.marginLeft = objStyle1["marginLeft"];
-	// 	bookimg[2].style.marginTop = objStyle1["marginTop"];
-	// 	    intervalId6 = setInterval(function(){
-	// 		if(parseInt(bookimg[2].style.width)<=100){
-	// 			clearInterval(intervalId6);
-	// 			return;
-	// 		}
-	// 		bookimg[2].style.width= (parseFloat(bookimg[2].style.width)-5)+"px";
-	// 		bookimg[2].style.height= (parseFloat(bookimg[2].style.height)-5)+"px";
-	// 		bookimg[2].style.marginLeft= (parseFloat(bookimg[2].style.marginLeft)+2.5)+"px";
-	// 		bookimg[2].style.marginTop= (parseFloat(bookimg[2].style.marginTop)+2.5)+"px";
-	// 	},30)
-	// }
 	//小说评价
 	for(var q=0;q<4;q++){
 		ul1list[q].index=q;
@@ -343,19 +315,7 @@
 			allduan1list[this.index].style.display ="block"; 
 		}
 	}
-	// for(var q=0;q<4;q++){
-	// 	ul3list[q].index=q;
-	// 	ul3list[q].onclick =function(){
-	// 		for(var j=0;j<4;j++){
-	// 			ul3list[j].style.background = "black";
-	// 			ul3list[j].style.opacity = 0.4;		
-	// 			allduan2list[j].style.display ="none"; 	
-	// 		}
-	// 		ul3list[this.index].style.background = "#ff3955";
-	// 		ul3list[this.index].style.opacity = 1;
-	// 		allduan2list[this.index].style.display ="block"; 
-	// 	}
-	// }
-
 </script>
 </html>
+
+
