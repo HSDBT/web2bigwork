@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+p{
+	color: white;
+}
+span{
+	color: white;
+}
 #wrap {
     width: 200px;
     margin: -20px 500px;
@@ -15,9 +21,9 @@
 }
 #top{
     height: 1550px;
-    background:url(images/background4.jpg);
+    background:url(images/background6.gif);
     background-size: cover;
-    background-repeat: no-repeat;
+/*    background-repeat: no-repeat;*/
 }
 #big{
     width: 800px;
@@ -50,7 +56,7 @@
     position:relative;
     overflow:hidden;
     background:none;
-/*  border: 1px solid red; */
+    /*border: 1px solid red;*/
 }
 #small>img{
     margin-left: 170px;
@@ -67,7 +73,7 @@
 }
 #word{
     width: 280px;
-    color: red;
+    color: white;
     font-size: 11px;
     display: block;
     overflow:hidden;
@@ -104,15 +110,16 @@
     position: fixed; 
     cursor: pointer;
 }
-#to_top{
-    color: red;
+#hhh{
+	color: red;
 }
 .btn1{
     margin-top: 10px;
 }
 .btn{
     margin: 10px;
-    width: 80px;      
+    width: 80px;   
+    color: white;   
 }
 .content{
     margin: -120px auto;
@@ -124,7 +131,8 @@
 .btn.active{
     height: 50px;
     width: 70px;
-    background-color: lightblue;
+    color: white;
+    background-color: blue;
 }
 .content.show{
     display:block;
